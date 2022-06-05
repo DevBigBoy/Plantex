@@ -1,12 +1,34 @@
 /*=============== SHOW MENU ===============*/
+const navMenu = document.getElementById("nav-menu"),
+  navToggle = document.getElementById("nav-toggle"),
+  navClose = document.getElementById("nav-close");
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.add("show-menu");
+  });
+}
 
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
 
+if (navClose) {
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove("show-menu");
+  });
+}
+
 /*=============== REMOVE MENU MOBILE ===============*/
+
+const navLinks = document.querySelectorAll(".nav__link");
+
+function actionLink() {
+  navMenu.classList.remove("show-menu");
+}
+
+navLinks.forEach((link) => link.addEventListener("click", actionLink));
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 
